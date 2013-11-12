@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="XnaControls.Controls.TilePalette"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:XnaControls="clr-namespace:XnaControls.Controls"
+             xmlns:XnaClasses="clr-namespace:XnaControls.Classes"
+             mc:Ignorable="d" 
+             x:Name="TilePaletteControl"
+             d:DesignHeight="300" d:DesignWidth="300">
+
+    <Grid x:Name="MainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <XnaControls:LevelToolBar Grid.Row="0" ActiveToolTypeChanged="LevelToolBar_ActiveToolTypeChanged" 
+                                               ZoomInClicked="LevelToolBar_ZoomInClicked" 
+                                               ZoomOutClicked="LevelToolBar_ZoomOutClicked" />
+        <ListView x:Name="TileList" 
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
+                  ItemsSource="{Binding Tiles}" 
+                  Grid.Row="1" 
+                  SelectedItem="{Binding Selected, ElementName=TilePaletteControl, Mode=OneWayToSource}" 
+                  SelectionChanged="TileList_SelectionChanged">
+            <ListView.ItemTemplate>
+                <DataTemplate DataType="{x:Type XnaClasses:UITile}">
+                    <XnaControls:TileControl DataContext="{Binding }"
+                                             PreviewMouseLeftButtonDown="TileList_MouseLeftButtonDown"
+                                             PreviewMouseLeftButtonUp="TileList_MouseLeftButtonUp"
+                                             MouseMove="TileList_MouseMove"
+                                             Width="{Binding ViewBox.Width}" Height="{Binding ViewBox.Height}">
+                        <XnaControls:TileControl.LayoutTransform>
+                            <ScaleTransform ScaleX="2" ScaleY="2"/>
+                        </XnaControls:TileControl.LayoutTransform>
+                    </XnaControls:TileControl>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal" Width="{Binding ActualWidth,ElementName=MainGrid}"/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+        </ListView>
+        <Grid Grid.Row="2" Background="LightGray">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Padding="2" TextAlignment="Left"
+                       Text="{Binding Selected.TileId, ElementName=TilePaletteControl, StringFormat={}Selected Tile ID: {0:D}}"/>
+            <TextBlock Grid.Column="1" Padding="2" TextAlignment="Left"
+                       Text="{Binding Selected.TileSetString, ElementName=TilePaletteControl, StringFormat={}TileSet ID: {0:s}}"/>
+        </Grid>
+
+    </Grid>
+</UserControl>

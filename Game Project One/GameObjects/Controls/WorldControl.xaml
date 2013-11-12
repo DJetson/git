@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="GameObjects.Controls.WorldControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" 
+             d:DesignWidth="300"  
+             Focusable="False"
+             PreviewKeyDown="UserControl_PreviewKeyDown_1"
+             PreviewKeyUp="UserControl_PreviewKeyUp_1"
+             Loaded="UserControl_Loaded_1"
+            >
+    <Grid HorizontalAlignment="Stretch" 
+            VerticalAlignment="Stretch" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" 
+                   Background="LightGray" 
+                   Text="{Binding Name}" 
+                   Visibility="{Binding IsTitleVisible}"/>
+        <Border Grid.Row="1" Background="DarkGray" BorderBrush="Black" BorderThickness="0,1,0,0">
+            <ItemsControl x:Name="RenderCollection" Focusable="True" ItemsSource="{Binding RenderList}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <Canvas />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+        </Border>
+    </Grid>
+</UserControl>

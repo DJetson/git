@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Commands>
+  <Command Name="help">
+    <Id>0</Id>
+    <CallTypeAssembly>GameObjects</CallTypeAssembly>
+    <CallType>GameObjects.Controls.DeveloperConsole.DeveloperConsoleControl</CallType>
+    <!--<CallProperty>CurrentWorld</CallProperty>-->
+    <CallFunction>ListAllCommands</CallFunction>
+    <Arguments>null</Arguments>
+    <Description>Gets a list of available commands</Description>
+  </Command>
+  <Command Name="listObjects">
+    <Id>1</Id>
+    <CallTypeAssembly>GameObjects</CallTypeAssembly>
+    <CallType>GameObjects.Classes.WorldObject</CallType>
+    <!--<CallProperty>CurrentWorld</CallProperty>-->
+    <CallFunction>ListAllObjects</CallFunction>
+    <Arguments>null</Arguments>
+    <Description>Lists all objects currently being tracked by the object manager</Description>
+  </Command>
+  <Command Name="addEnemy">
+    <Id>2</Id>
+    <CallTypeAssembly>GameObjects</CallTypeAssembly>
+    <CallType>GameObjects.Classes.WorldObject</CallType>
+    <!--<CallProperty>CurrentWorld</CallProperty>-->
+    <CallFunction>AddEnemy</CallFunction>
+    <Arguments>null</Arguments>
+    <Description>Adds a single enemy at a random starting location</Description>
+  </Command>
+  <Command Name="togglePause">
+    <Id>3</Id>
+    <CallTypeAssembly>GameObjects</CallTypeAssembly>
+    <CallType>GameObjects.Classes.WorldObject</CallType>
+    <!--<CallProperty>CurrentWorld</CallProperty>-->
+    <CallFunction>ToggleIsPaused</CallFunction>
+    <Arguments>null</Arguments>
+    <Description>Pauses/Unpauses the world</Description>
+  </Command>
+  <Command Name="toggleFullscreen">
+    <Id>4</Id>
+    <CallTypeAssembly>GameObjects</CallTypeAssembly>
+    <CallType>GameObjects.Windows.MainWindow</CallType>
+    <!--<CallProperty>CurrentWorld</CallProperty>-->
+    <CallFunction>ToggleFullscreen</CallFunction>
+    <Arguments>null</Arguments>
+    <Description>Toggles fullscreen mode</Description>
+  </Command>
+  <Command Name="exit">
+    <Id>5</Id>
+    <CallTypeAssembly>GameObjects</CallTypeAssembly>
+    <CallType>GameObjects.Windows.MainWindow</CallType>
+    <!--<CallProperty>CurrentWorld</CallProperty>-->
+    <CallFunction>Exit</CallFunction>
+    <Arguments>null</Arguments>
+    <Description>Exit to Windows</Description>
+  </Command>
+  <Command Name="panRight">
+    <Id>6</Id>
+    <CallTypeAssembly>GameObjects</CallTypeAssembly>
+    <CallType>GameObjects.Classes.WorldObject</CallType>
+    <!--<CallProperty>CurrentWorld</CallProperty>-->
+    <CallFunction>MoveCameraRight</CallFunction>
+    <Arguments>null</Arguments>
+    <Description>Pans the camera right 100</Description>
+  </Command>
+  <Command Name="addPlayer">
+    <Id>7</Id>
+    <CallTypeAssembly>GameObjects</CallTypeAssembly>
+    <CallType>GameObjects.Classes.WorldObject</CallType>
+    <!--<CallProperty>CurrentWorld</CallProperty>-->
+    <CallFunction>AddPlayer</CallFunction>
+    <Arguments>null</Arguments>
+    <Description>Adds a player object to the world</Description>
+  </Command>
+  <Command Name="zoomIn">
+    <Id>8</Id>
+    <CallTypeAssembly>GameObjects</CallTypeAssembly>
+    <CallType>GameObjects.Classes.WorldObject</CallType>
+    <!--<CallProperty>CurrentWorld</CallProperty>-->
+    <CallFunction>ZoomIn</CallFunction>
+    <Arguments>null</Arguments>
+    <Description>Causes the camera to zoom in</Description>
+  </Command>
+  <Command Name="zoomOut">
+    <Id>9</Id>
+    <CallTypeAssembly>GameObjects</CallTypeAssembly>
+    <CallType>GameObjects.Classes.WorldObject</CallType>
+    <!--<CallProperty>CurrentWorld</CallProperty>-->
+    <CallFunction>ZoomOut</CallFunction>
+    <Arguments>null</Arguments>
+    <Description>Causes the camera to zoom out</Description>
+  </Command>
+  <Command Name="cameraInfo">
+    <Id>10</Id>
+    <CallTypeAssembly>GameObjects</CallTypeAssembly>
+    <CallType>GameObjects.Classes.WorldObject</CallType>
+    <!--<CallProperty>CurrentWorld</CallProperty>-->
+    <CallFunction>GetCameraInfo</CallFunction>
+    <Arguments>null</Arguments>
+    <Description>Gets info about the camera object</Description>
+  </Command>
+</Commands>

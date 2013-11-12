@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="XnaControls.Controls.XnaControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:Width="200"
+             d:Height="200"
+             MinHeight="50" 
+             MinWidth="50" 
+             Background="CornflowerBlue" 
+             MouseMove="UserControl_MouseMove" 
+             MouseLeftButtonDown="UserControl_MouseLeftButtonDown" 
+             MouseRightButtonDown="UserControl_MouseRightButtonDown"
+             MouseLeftButtonUp="UserControl_MouseLeftButtonUp" 
+             MouseRightButtonUp="UserControl_MouseRightButtonUp"
+             MouseDoubleClick="UserControl_MouseDoubleClick"
+             MouseEnter="UserControl_MouseEnter"
+             MouseLeave="UserControl_MouseLeave"
+             MouseWheel="UserControl_MouseWheel">
+    <Image x:Name="rootImage" />
+</UserControl>

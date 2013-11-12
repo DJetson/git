@@ -1,0 +1,22 @@
+﻿<Controls:GameControl x:Class="GameObjects.Controls.ProjectileControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Controls="clr-namespace:GameObjects.Controls"
+Canvas.ZIndex="{Binding ZIndex}"
+             mc:Ignorable="d" 
+                      d:DesignWidth="300" d:DesignHeight="300"
+             Canvas.Left="{Binding DrawPosition.X}" 
+             Canvas.Top="{Binding DrawPosition.Y}">
+    <Grid>
+        <Ellipse Width="{Binding Width}"
+                 Height="{Binding Height}"
+                 Stroke="{Binding Stroke}"
+                 Fill="{Binding Fill}">
+            <!--<Ellipse.RenderTransform>-->
+                <!--<RotateTransform CenterX="{Binding Center.X}" CenterY="{Binding Center.Y}" Angle="{Binding Angle}"/>-->
+            <!--</Ellipse.RenderTransform>-->
+        </Ellipse>
+    </Grid>
+</Controls:GameControl>

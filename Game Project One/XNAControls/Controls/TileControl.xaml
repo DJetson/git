@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="XnaControls.Controls.TileControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" 
+             d:DesignWidth="300">
+    <ContentControl Canvas.Left="{Binding Position.X}"
+                    Canvas.Top="{Binding Position.Y}">
+        <Rectangle Width="{Binding TileSize.Width}" Height="{Binding TileSize.Height}" Stretch="UniformToFill">
+            <Rectangle.Fill>
+                <VisualBrush ViewportUnits="RelativeToBoundingBox" 
+                         Viewbox="{Binding ViewBox}" 
+                         ViewboxUnits="Absolute">
+                    <VisualBrush.Visual>
+                        <Image Source="{Binding Image}"/>
+                    </VisualBrush.Visual>
+                    <VisualBrush.Viewport>
+                        <Rect X="0" 
+                          Y="0" 
+                          Width="1" 
+                          Height="1"/>
+                    </VisualBrush.Viewport>
+                </VisualBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+    </ContentControl>
+</UserControl>

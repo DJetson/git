@@ -1,0 +1,42 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="WPFXSample.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="GridColor" Type="System.Windows.Media.Color" Scope="User">
+      <Value Profile="(Default)">#FFFF0000</Value>
+    </Setting>
+    <Setting Name="GridOpacity" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0.75</Value>
+    </Setting>
+    <Setting Name="GridWidth" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">16</Value>
+    </Setting>
+    <Setting Name="GridHeight" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">16</Value>
+    </Setting>
+    <Setting Name="TileWidth" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">16</Value>
+    </Setting>
+    <Setting Name="TileHeight" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">16</Value>
+    </Setting>
+    <Setting Name="GridLineThickness" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0.5</Value>
+    </Setting>
+    <Setting Name="LevelBackgroundColor" Type="System.Windows.Media.Color" Scope="User">
+      <Value Profile="(Default)">#FF000000</Value>
+    </Setting>
+    <Setting Name="TileSetPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\\Users\\dmalicoat\\Pictures\\Sprites\\PNG\\Tiles\\TestTiles.png</Value>
+    </Setting>
+    <Setting Name="TileSetKey" Type="System.String" Scope="User">
+      <Value Profile="(Default)">TestTiles.png</Value>
+    </Setting>
+    <Setting Name="TileSetSizeX" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">19</Value>
+    </Setting>
+    <Setting Name="TileSetSizeY" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">19</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

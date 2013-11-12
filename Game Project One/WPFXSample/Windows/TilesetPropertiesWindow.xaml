@@ -1,0 +1,129 @@
+﻿<Window x:Class="WPFXSample.Windows.TilesetPropertiesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:XnaControls="clr-namespace:XnaControls.Controls;assembly=XnaControls"
+        Title="TilesetPropertiesWindow" 
+        Height="300" 
+        Width="300"
+        x:Name="TilePropertiesWindow"
+        Background="LightGray">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions >
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" 
+                       Grid.Column="0" 
+                       Text="{Binding Tileset.ResourceName, StringFormat={}Name: {0:s}}" />
+            <TextBlock Grid.Row="0" 
+                       Grid.Column="1" 
+                       Text="{Binding Tileset.ResourceFilePath, StringFormat={}File: {0:s}}"/>
+            <Border Grid.Row="1" 
+                    Grid.Column="0" 
+                    BorderBrush="DarkGray" 
+                    Padding="5" 
+                    BorderThickness="1" 
+                    Margin="5,2,2,2">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Row="0" 
+                               Grid.Column="0" 
+                               Grid.ColumnSpan="4" 
+                               Text="Tile Count"/>
+                    <XnaControls:NumberBox x:Name="TextCountX" 
+                                           BoxLabel="X:"
+                                           Grid.Column="1" 
+                                           Grid.Row="1" 
+                                           ValueChanged="TextCountX_LostFocus" 
+                                           Value="{Binding TileCountX, ElementName=TilePropertiesWindow}" />
+                    <XnaControls:NumberBox x:Name="TextCountY" 
+                                           BoxLabel="Y:"
+                                           Grid.Column="3" 
+                                           Grid.Row="1" 
+                                           ValueChanged="TextCountY_LostFocus" 
+                                           Value="{Binding TileCountY, ElementName=TilePropertiesWindow}" />
+                </Grid>
+            </Border>
+            <Border Grid.Row="1" 
+                    Grid.Column="1" 
+                    BorderBrush="DarkGray" 
+                    Padding="5" 
+                    BorderThickness="1" 
+                    Margin="5,2,2,2">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Row="0" 
+                               Grid.Column="0" 
+                               Grid.ColumnSpan="4" 
+                               Text="Tile Size"/>
+                    <XnaControls:NumberBox x:Name="TextSizeX" 
+                                           BoxLabel="X:"
+                                           Grid.Column="1" 
+                                           Grid.Row="1" 
+                                           ValueChanged="TextSizeX_LostFocus" 
+                                           Value="{Binding TileSizeX,ElementName=TilePropertiesWindow}" />
+                    <XnaControls:NumberBox x:Name="TextSizeY"
+                                           BoxLabel="Y:"
+                                           Grid.Column="3" 
+                                           Grid.Row="1" 
+                                           ValueChanged="TextSizeY_LostFocus" 
+                                           Value="{Binding TileSizeY,ElementName=TilePropertiesWindow}" />
+                </Grid>
+            </Border>
+            <Button x:Name="OkButton" 
+                    Grid.Row="2" 
+                    Grid.Column="1" 
+                    Grid.RowSpan="2" 
+                    IsDefault="True"
+                    Margin="5"
+                    DockPanel.Dock="Right" 
+                    Content="Ok" 
+                    Click="OkButton_Click" />
+            <Button x:Name="CancelButton" 
+                    Grid.Row="2" 
+                    Grid.Column="0" 
+                    Grid.RowSpan="2" 
+                    IsCancel="True"
+                    Margin="5"
+                    DockPanel.Dock="Right" 
+                    Content="Cancel" 
+                    Click="CancelButton_Click"/>
+        </Grid>
+        <ScrollViewer Grid.Row="1" 
+                      Margin="5" 
+                      HorizontalScrollBarVisibility="Visible" 
+                      Background="White">
+            <XnaControls:XnaControl x:Name="XControl" 
+                                    Draw="XnaControl_Draw" />
+        </ScrollViewer>
+    </Grid>
+</Window>

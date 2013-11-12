@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Level Type="Level" Name="TestLevel" Id="-1" IsGridVisible="True">
+  <Size X="5000" Y="5000"/>
+  <Grid>
+    <GridSize Width="15" Height="15" />
+    <CellSize Width="64" Height="64" />
+    <GridLines LineThickness="1">
+      <Color R="255" G="0" B="0" A="255"/>
+    </GridLines>
+  </Grid>
+  <Objects>
+    <!--<Object Type="GridObject">
+      <GridSize Width="15" Height="15" />
+      <CellSize Width="64" Height="64" />
+      <GridLines LineThickness="1">
+        <Color R="255" G="0" B="0" A="255"/>
+      </GridLines>
+    </Object>-->
+    <Object Type="AnimatedObject">
+      <Position X="0" Y="0" />
+      <Size Width="10" Height="10" />
+      <Animations CurrentAnimation="WalkingRight">
+        <Animation Key="WalkingRight"
+                   FrameCount="10"
+                   FPS="28" >
+          <FrameSize Width="35" Height="42" />
+          <SheetSize Width="350" Height="42" />
+        </Animation>
+      </Animations>
+    </Object>
+    <!--<Object Type="UIFrame">
+      <Position X="200" Y="75"/>
+      <Size Width="300" Height="75"/>
+      <UIFrame StrokeThickness="10">
+        <Fill R="255" G="0" B="255" A="255"/>
+        <Stroke R="0" G="255" B="0" A="255"/>
+      </UIFrame>
+    </Object>-->
+    <Object Type="UIButton">
+      <Position X="100" Y="150"/>
+      <Size Width="100" Height="75"/>
+      <UIFrame StrokeThickness="2" ResourceName="MenuBG">
+        <Fill R="96" G="96" B="96" A="255"/>
+        <Stroke R="128" G="128" B="128" A="255"/>
+      </UIFrame>
+      <UIButton Text="Dustin" >
+        <FontColor R="255" G="255" B="255" A="255"/>
+      </UIButton>
+    </Object>
+    <Object Type="UIButton">
+      <Position X="200" Y="150"/>
+      <Size Width="100" Height="75"/>
+      <UIFrame StrokeThickness="2" ResourceName="MenuBG">
+        <Fill R="96" G="96" B="96" A="255"/>
+        <Stroke R="128" G="128" B="128" A="255"/>
+      </UIFrame>
+      <UIButton Text="Blah" >
+        <FontColor R="255" G="255" B="255" A="255"/>
+      </UIButton>
+    </Object>
+    <Object Type="UIButton">
+      <Position X="300" Y="150"/>
+      <Size Width="100" Height="75"/>
+      <UIFrame StrokeThickness="2" ResourceName="MenuBG">
+        <Fill R="96" G="96" B="96" A="255"/>
+        <Stroke R="128" G="128" B="128" A="255"/>
+      </UIFrame>
+      <UIButton Text="AAAAHHH" >
+        <FontColor R="255" G="255" B="255" A="255"/>
+      </UIButton>
+    </Object>
+  </Objects>
+</Level>

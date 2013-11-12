@@ -1,0 +1,9 @@
+﻿New projects can use the WorldControl inside of a MainWindow or use the MainWindow contained inside the GameObjects library.
+In order to use the MainWindow inside the library the following line must be placed in App.xaml:
+StartupUri="pack://application:,,,/GameObjects;component/Windows/MainWindow.xaml"
+
+This line should replace the existing line which typically reads:
+StartupUri="MainWindow.xaml"
+
+The GameObjects MainWindow is already designed with a WorldControl, a DeveloperConsoleControl. It supports fullscreen mode 
+and normal windowed mode, as well as various Developer Console Commands such as: toggleFullscreen and exit.

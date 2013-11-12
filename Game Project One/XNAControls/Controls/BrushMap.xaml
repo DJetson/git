@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="XnaControls.Controls.BrushMap"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:XnaControls="clr-namespace:XnaControls.Controls"
+             xmlns:XnaClasses="clr-namespace:XnaControls.Classes"
+             x:Name="CONTROL_BrushMap"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" >
+    <!--<UserControl.LayoutTransform>
+        <ScaleTransform ScaleX="{Binding ScaleX, ElementName=CONTROL_BrushMap}" ScaleY="{Binding ScaleY, ElementName=CONTROL_BrushMap}"/>
+    </UserControl.LayoutTransform>-->
+    <!--<Canvas Width="{Binding ActualWidth, ElementName=BrushGrid}"
+            Height="{Binding ActualHeight, ElementName=BrushGrid}">-->
+    <!--<Grid>-->
+    <Grid >
+            <XnaControls:BrushControl BrushTileRows="{Binding BrushSize.Height, ElementName=CONTROL_BrushMap}"
+                                  BrushTileColumns="{Binding BrushSize.Width, ElementName=CONTROL_BrushMap}"
+                                  BrushTileWidth="{Binding TileSize.Width, ElementName=CONTROL_BrushMap}"
+                                  BrushTileHeight="{Binding TileSize.Height, ElementName=CONTROL_BrushMap}" 
+                                  BrushLayer="{Binding BrushTiles, ElementName=CONTROL_BrushMap}"
+                                  Width="{Binding ActualWidth,ElementName=BrushGrid}"
+                                  Height="{Binding ActualHeight,ElementName=BrushGrid}"
+                                  PreviewDrop="LevelGridControl_Drop" 
+                                  Drop="LevelGridControl_Drop"
+                                  Background="LightGray"
+                                  AllowDrop="True" 
+                                  />
+            <XnaControls:LevelGridControl x:Name="BrushGrid" TileSize="{Binding TileSize, ElementName=CONTROL_BrushMap}" Background="Transparent"
+                                      GridColor="{Binding GridColor, ElementName=CONTROL_BrushMap}" 
+                                      GridOpacity="{Binding GridOpacity, ElementName=CONTROL_BrushMap}" 
+                                      GridLineThickness="{Binding GridLineThickness, ElementName=CONTROL_BrushMap}"
+                                      Drop="LevelGridControl_Drop"
+                                      LevelSize="{Binding BrushSize, ElementName=CONTROL_BrushMap}" AllowDrop="True" >
+            </XnaControls:LevelGridControl>
+    </Grid>
+    <!--</Grid>-->
+    <!--</Canvas>-->
+</UserControl>

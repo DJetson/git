@@ -1,0 +1,8 @@
+﻿Classes
+-------
+KeyBindings -	A class that has a Dictionary<System.Windows.Input.Key,PlayerActions> which manages which player
+				actions are bound to which keys. It should be fairly simple, but until there are more reliable objects
+				to use this class with it would be needlessly difficult to get into place and working properly.
+
+PlayerActions -	A base class which defines various PlayerAction Metadata (Name, Requirements, Upgrades, etc.) as well
+				as a few abstract functions which, when defined, determine how a player object is altered by a given action.

@@ -1,0 +1,10 @@
+﻿<Level Type="Level" Name="TestLevel" Id="-1" IsGridVisible="True">
+  <!--<Size X="5000" Y="5000"/>-->
+  <Object Type="GridObject">
+    <GridSize Width="64" Height="64" />
+    <CellSize Width="64" Height="64" />
+    <GridLines LineThickness="1">
+      <Color R="255" G="0" B="0" A="255"/>
+    </GridLines>
+  </Object>
+</Level>

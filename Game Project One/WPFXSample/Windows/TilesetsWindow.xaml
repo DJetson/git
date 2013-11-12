@@ -1,0 +1,9 @@
+﻿<Window x:Class="WPFXSample.Windows.TilesetsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:XnaControls="clr-namespace:XnaControls.Controls;assembly=XnaControls"
+        Title="TilesetsWindow" Height="300" Width="300" WindowStyle="ToolWindow" WindowStartupLocation="Manual">
+    <Grid>
+        <XnaControls:XnaControl x:Name="xControl" Draw="XnaControl_Draw" XNAMouseMove="XnaControl_XNAMouseMove" XNAMouseLeftButtonDown="xControl_XNAMouseLeftButtonDown" />
+    </Grid>
+</Window>

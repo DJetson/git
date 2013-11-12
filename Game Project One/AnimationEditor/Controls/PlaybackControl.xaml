@@ -1,0 +1,285 @@
+﻿<UserControl x:Class="AnimationEditor.Controls.PlaybackControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="50" d:DesignWidth="400">
+    <UserControl.Resources>
+        <DrawingBrush x:Key="StopIcon" Stretch="Uniform">
+            <DrawingBrush.Drawing>
+                <DrawingGroup>
+                    <DrawingGroup.Children>
+                        <GeometryDrawing Brush="#FF000000" Geometry="F1 M 32,32L 224,32L 224,224L 32,224L 32,32 Z ">
+                            <GeometryDrawing.Pen>
+                                <Pen Thickness="4.99938" LineJoin="Round" Brush="#FF393939"/>
+                            </GeometryDrawing.Pen>
+                        </GeometryDrawing>
+                    </DrawingGroup.Children>
+                </DrawingGroup>
+            </DrawingBrush.Drawing>
+        </DrawingBrush>
+        <DrawingBrush x:Key="StepIcon" Stretch="Uniform">
+            <DrawingBrush.Drawing>
+                <DrawingGroup>
+                    <DrawingGroup.Children>
+                        <GeometryDrawing Brush="#FF000000" Geometry="F1 M 74.6667,128L 234.667,224L 234.667,32L 74.6667,128 Z ">
+                            <GeometryDrawing.Pen>
+                                <Pen Thickness="4.99938" LineJoin="Round" Brush="#FF393939"/>
+                            </GeometryDrawing.Pen>
+                        </GeometryDrawing>
+                        <GeometryDrawing Brush="#FF000000" Geometry="F1 M 21.3333,32L 74.6667,32L 74.6667,224L 21.3333,224L 21.3333,32 Z ">
+                            <GeometryDrawing.Pen>
+                                <Pen Thickness="4.99938" LineJoin="Round" Brush="#FF393939"/>
+                            </GeometryDrawing.Pen>
+                        </GeometryDrawing>
+                    </DrawingGroup.Children>
+                </DrawingGroup>
+            </DrawingBrush.Drawing>
+        </DrawingBrush>
+        <DrawingBrush x:Key="TrackIcon" Stretch="Uniform">
+            <DrawingBrush.Drawing>
+                <DrawingGroup>
+                    <DrawingGroup.Children>
+                        <GeometryDrawing Brush="#FF000000" Geometry="F1 M 125.263,127.548L 235.332,191.096L 235.332,64L 125.263,127.548 Z ">
+                            <GeometryDrawing.Pen>
+                                <Pen Thickness="4.99938" LineJoin="Round" Brush="#FF393939"/>
+                            </GeometryDrawing.Pen>
+                        </GeometryDrawing>
+                        <GeometryDrawing Brush="#FF000000" Geometry="F1 M 15.1944,127.548L 125.263,191.096L 125.263,64L 15.1944,127.548 Z ">
+                            <GeometryDrawing.Pen>
+                                <Pen Thickness="4.99938" LineJoin="Round" Brush="#FF393939"/>
+                            </GeometryDrawing.Pen>
+                        </GeometryDrawing>
+                    </DrawingGroup.Children>
+                </DrawingGroup>
+            </DrawingBrush.Drawing>
+        </DrawingBrush>
+        <DrawingBrush x:Key="PlayIcon" Stretch="Uniform">
+            <DrawingBrush.Drawing>
+                <DrawingGroup>
+                    <DrawingGroup.Children>
+                        <GeometryDrawing Brush="#FF000000" Geometry="F1 M 74.6667,128L 234.667,224L 234.667,32L 74.6667,128 Z ">
+                            <GeometryDrawing.Pen>
+                                <Pen Thickness="4.99938" LineJoin="Round" Brush="#FF393939"/>
+                            </GeometryDrawing.Pen>
+                        </GeometryDrawing>
+                    </DrawingGroup.Children>
+                </DrawingGroup>
+            </DrawingBrush.Drawing>
+        </DrawingBrush>
+        <DrawingBrush x:Key="PauseIcon" Stretch="Uniform">
+            <DrawingBrush.Drawing>
+                <DrawingGroup>
+                    <DrawingGroup.Children>
+                        <GeometryDrawing Brush="#FF000000" Geometry="F1 M 32,32L 85.3333,32L 85.3333,192L 32,192L 32,32 Z ">
+                            <GeometryDrawing.Pen>
+                                <Pen Thickness="4.99938" LineJoin="Round" Brush="#FF393939"/>
+                            </GeometryDrawing.Pen>
+                        </GeometryDrawing>
+                        <GeometryDrawing Brush="#FF000000" Geometry="F1 M 128,32L 181.333,32L 181.333,192L 128,192L 128,32 Z ">
+                            <GeometryDrawing.Pen>
+                                <Pen Thickness="4.99938" LineJoin="Round" Brush="#FF393939"/>
+                            </GeometryDrawing.Pen>
+                        </GeometryDrawing>
+                    </DrawingGroup.Children>
+                </DrawingGroup>
+            </DrawingBrush.Drawing>
+        </DrawingBrush>
+        <DrawingBrush x:Key="ReverseIcon" Stretch="Uniform">
+            <DrawingBrush.Drawing>
+                <DrawingGroup>
+                    <DrawingGroup.Children>
+                        <GeometryDrawing Brush="#FF000000" Geometry="F1 M 29.8782,223.307L 80.5592,223.307L 144.794,134.559C 150.102,134.738 154.411,134.828 157.721,134.828C 159.093,134.828 160.554,134.805 162.105,134.761C 163.656,134.716 165.266,134.649 166.936,134.559L 166.936,188.953C 166.936,201.001 165.698,208.471 163.223,211.364C 159.883,215.509 154.873,217.581 148.193,217.581L 141.17,217.581L 141.17,223.307L 218.467,223.307L 218.467,217.581L 211.712,217.581C 204.138,217.581 198.725,214.942 195.475,209.664C 193.626,206.771 192.701,199.867 192.701,188.953L 192.701,65.8516C 192.701,53.8039 193.939,46.3337 196.414,43.4411C 199.843,39.2959 204.943,37.2234 211.712,37.2234L 218.467,37.2234L 218.467,31.4977L 148.954,31.4977C 128.705,31.4977 113.772,32.959 104.155,35.8814C 94.5378,38.8039 86.3743,44.1717 79.6645,51.9848C 72.9548,59.7979 69.5999,69.117 69.5999,79.942C 69.5999,91.5126 73.6257,101.555 81.6774,110.069C 89.7291,118.583 102.209,124.599 119.118,128.118L 78.0989,184.838C 69.1526,197.333 61.4662,205.63 55.0398,209.731C 48.6133,213.831 40.2262,216.448 29.8782,217.581L 29.8782,223.307 Z M 166.936,125.971C 165.057,125.971 163.432,125.993 162.06,126.038C 160.688,126.083 159.57,126.105 158.705,126.105C 139.65,126.105 125.283,121.982 115.606,113.737C 105.929,105.491 101.091,94.9868 101.091,82.2234C 101.091,69.7581 104.998,59.619 112.811,51.8059C 120.624,43.9927 130.957,40.0862 143.81,40.0862C 149.505,40.0862 157.214,41.9947 166.936,45.8118L 166.936,125.971 Z "/>
+                    </DrawingGroup.Children>
+                </DrawingGroup>
+            </DrawingBrush.Drawing>
+        </DrawingBrush>
+        <DrawingBrush x:Key="LoopIcon" Stretch="Uniform">
+            <DrawingBrush.Drawing>
+                <DrawingGroup>
+                    <DrawingGroup.Children>
+                        <GeometryDrawing Geometry="F1 M 32,64L 224,64L 224,192L 32,192L 32,64 Z ">
+                            <GeometryDrawing.Pen>
+                                <Pen Thickness="19.9975" MiterLimit="2.75" Brush="#FF000000"/>
+                            </GeometryDrawing.Pen>
+                        </GeometryDrawing>
+                        <GeometryDrawing Brush="#FF000000" Geometry="F1 M 94.8911,63.9341L 192,120L 192,7.86832L 94.8911,63.9341 Z ">
+                            <GeometryDrawing.Pen>
+                                <Pen Thickness="9.99875" MiterLimit="2.75" Brush="#FFFFFFFF"/>
+                            </GeometryDrawing.Pen>
+                        </GeometryDrawing>
+                        <GeometryDrawing Brush="#FF000000" Geometry="F1 M 224,64L 160,64">
+                            <GeometryDrawing.Pen>
+                                <Pen Thickness="19.9975" MiterLimit="2.75" Brush="#FF000000"/>
+                            </GeometryDrawing.Pen>
+                        </GeometryDrawing>
+                    </DrawingGroup.Children>
+                </DrawingGroup>
+            </DrawingBrush.Drawing>
+        </DrawingBrush>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.Resources>
+            <Style x:Key="ButtonStyle" TargetType="Button">
+                <Style.Setters>
+                    <Setter Property="Background" Value="LightGray" />
+                </Style.Setters>
+            </Style>
+            <Style x:Key="RepeatButtonStyle" TargetType="RepeatButton">
+                <Style.Setters>
+                    <Setter Property="Background" Value="LightGray" />
+                </Style.Setters>
+            </Style>
+            <ControlTemplate x:Key="ButtonTemplate" TargetType="Button">
+                <Border BorderBrush="Black" BorderThickness="1" Background="{TemplateBinding Background}" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}">
+                    <Rectangle Fill="{TemplateBinding Content}" Margin="7" Stretch="UniformToFill" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                </Border>
+            </ControlTemplate>
+            <ControlTemplate x:Key="ReversedButtonTemplate" TargetType="Button">
+                <Border BorderBrush="Black" BorderThickness="1" Background="{TemplateBinding Background}" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}">
+                    <Rectangle Fill="{TemplateBinding Content}" Margin="7" Stretch="UniformToFill" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="0.5,0.5">
+                        <Rectangle.LayoutTransform>
+                            <RotateTransform Angle="180"/>
+                        </Rectangle.LayoutTransform>
+                    </Rectangle>
+                </Border>
+            </ControlTemplate>
+            <ControlTemplate x:Key="ToggleButtonTemplate" TargetType="ToggleButton">
+                <Border BorderBrush="Black" BorderThickness="1" Background="{TemplateBinding Background}" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}">
+                    <Rectangle Fill="{TemplateBinding Content}" Margin="7" Stretch="UniformToFill" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                </Border>
+            </ControlTemplate>
+            <ControlTemplate x:Key="RepeatButtonTemplate" TargetType="RepeatButton">
+                <Border BorderBrush="Black" BorderThickness="1" Background="{TemplateBinding Background}" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}">
+                    <Rectangle Fill="{TemplateBinding Content}" Margin="7" Stretch="UniformToFill" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                </Border>
+            </ControlTemplate>
+            <ControlTemplate x:Key="ReversedRepeatButtonTemplate" TargetType="RepeatButton">
+                <Border BorderBrush="Black" BorderThickness="1" Background="{TemplateBinding Background}" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}">
+                    <Rectangle Fill="{TemplateBinding Content}" Margin="7" Stretch="UniformToFill" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="0.5,0.5">
+                        <Rectangle.LayoutTransform>
+                            <RotateTransform Angle="180"/>
+                        </Rectangle.LayoutTransform>
+                    </Rectangle>
+                </Border>
+            </ControlTemplate>
+            <Style x:Key="ToggleButtonStyle" TargetType="{x:Type ToggleButton}">
+                <Style.Setters>
+                    <Setter Property="Background" Value="LightGray"/>
+                </Style.Setters>
+                <Style.Triggers>
+                    <Trigger Property="IsChecked" Value="True">
+                        <Setter Property="Background" Value="Gray"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Slider x:Name="Scrubber" 
+                AutoToolTipPlacement="TopLeft" 
+                Delay="1" 
+                Minimum="0" 
+                Maximum="{Binding LastFrameIndex}" 
+                Grid.Column="0" 
+                Grid.ColumnSpan="8" 
+                Grid.Row="0" 
+                Value="{Binding CurrentFrameIndex}" 
+                HorizontalAlignment="Stretch" 
+                VerticalAlignment="Stretch"/>
+        <Button x:Name="StopButton" 
+                Style="{StaticResource ButtonStyle}"
+                Template="{StaticResource ButtonTemplate}"
+                Grid.Column="0" 
+                Grid.Row="1"
+                Content="{StaticResource StopIcon}" 
+                Click="StopButton_Click_1"/>
+        <Button x:Name="RewindButton" 
+                Style="{StaticResource ButtonStyle}"
+                Template="{StaticResource ButtonTemplate}"
+                Grid.Column="1"
+                Grid.Row="1"
+                Content="{StaticResource TrackIcon}" 
+                Click="RewindButton_Click_1"/>
+        <RepeatButton x:Name="StepBackButton" 
+                Style="{StaticResource RepeatButtonStyle}"
+                Template="{StaticResource RepeatButtonTemplate}"
+                Grid.Column="2"
+                Grid.Row="1"
+                Content="{StaticResource StepIcon}" 
+                Click="StepBackButton_Click_1"/>
+        <Button x:Name="PlayPauseButton" 
+                Template="{StaticResource ReversedButtonTemplate}"
+                Grid.Column="3"
+                Grid.Row="1"
+                Click="PlayPauseButton_Click_1">
+            <Button.Style>
+                <Style TargetType="Button" BasedOn="{StaticResource ButtonStyle}">
+                    <Style.Setters>
+                        <Setter Property="Content" Value="{StaticResource PlayIcon}"/>
+                    </Style.Setters>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsPlaying}" Value="True">
+                            <Setter Property="Content" Value="{StaticResource PauseIcon}"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <RepeatButton x:Name="StepForwardButton"
+                Style="{StaticResource RepeatButtonStyle}"
+                Template="{StaticResource ReversedRepeatButtonTemplate}"
+                Grid.Column="4"
+                Grid.Row="1"
+                Content="{StaticResource StepIcon}" 
+                Click="StepForwardButton_Click_1"/>
+        <Button x:Name="FastForwardButton"
+                Style="{StaticResource ButtonStyle}"
+                Template="{StaticResource ReversedButtonTemplate}"
+                Grid.Column="5" 
+                Grid.Row="1"
+                Content="{StaticResource TrackIcon}"
+                Click="FastForwardButton_Click_1"/>
+        <ToggleButton x:Name="ReverseButton"
+                Template="{StaticResource ToggleButtonTemplate}"
+                Grid.Column="6"
+                Grid.Row="1"
+                Content="{StaticResource ReverseIcon}" 
+                Style="{StaticResource ToggleButtonStyle}"
+                IsChecked="{Binding IsReversed, Mode=TwoWay}"
+                Click="ReverseButton_Click_1"/>
+        <ToggleButton x:Name="LoopButton"
+                Template="{StaticResource ToggleButtonTemplate}"
+                Grid.Column="7"
+                Grid.Row="1"
+                Content="{StaticResource LoopIcon}" 
+                Click="LoopButton_Click_1">
+            <ToggleButton.Style>
+                <Style BasedOn="{StaticResource ToggleButtonStyle}" TargetType="ToggleButton">
+                    <Style.Setters>
+                        <Setter Property="IsChecked" Value="False"/>
+                    </Style.Setters>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsContinuous}" Value="Continuous">
+                            <Setter Property="IsChecked" Value="True"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </ToggleButton.Style>
+        </ToggleButton>
+
+    </Grid>
+</UserControl>
