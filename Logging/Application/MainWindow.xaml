@@ -1,0 +1,85 @@
+﻿<Window x:Class="LogSample.MainWindow"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		Title="MainWindow"
+		Height="350"
+		Loaded="Window_Loaded"
+		Width="525">
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition />
+			<ColumnDefinition />
+			<ColumnDefinition />
+			<ColumnDefinition />
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition />
+			<RowDefinition />
+			<RowDefinition />
+			<RowDefinition />
+		</Grid.RowDefinitions>
+
+		<Button x:Name="TestInfo"
+				Grid.Row="0"
+				Grid.Column="0"
+				ToolTip="Generate an Info Log Message"
+				Click="TestInfo_Click"
+				MouseEnter="TestInfo_MouseEnter"
+				MouseLeave="TestInfo_MouseLeave"
+				Content="Test Info" />
+
+		<Button x:Name="TestWarning"
+				Grid.Row="0"
+				Grid.Column="1"
+				ToolTip="Generate a Warning Log Message"
+				Click="TestWarning_Click"
+				MouseEnter="TestWarning_MouseEnter"
+				MouseLeave="TestWarning_MouseLeave"
+				Content="Test Warning" />
+
+		<Button x:Name="TestError"
+				Grid.Row="0"
+				Grid.Column="2"
+				ToolTip="Generate an Error Log Message"
+				Click="TestError_Click"
+				MouseEnter="TestError_MouseEnter"
+				MouseLeave="TestError_MouseLeave"
+				Content="Test Error" />
+
+		<Button x:Name="TestDebug"
+				Grid.Row="0"
+				Grid.Column="3"
+				ToolTip="Generate a Debug Log Message"
+				Click="TestDebug_Click"
+				Content="Test Debug" />
+
+		<Button x:Name="TestBindingError"
+				Grid.Row="1"
+				Grid.Column="0"
+				Grid.ColumnSpan="4"
+				ToolTip="Generate Binding Error Message"
+				Click="TestBindingError_Click"
+				Content="Test Binding Error" />
+
+		<ToggleButton x:Name="SendToEventLog"
+					  Grid.Row="2"
+					  Grid.Column="0"
+					  Grid.ColumnSpan="2"
+					  ToolTip="Send all Log Messages to the System Event Log"
+					  Content="Send to Event Log" />
+
+		<ToggleButton x:Name="OutputToLogFile"
+					  Grid.Row="2"
+					  Grid.Column="2"
+					  Grid.ColumnSpan="2"
+					  ToolTip="Send the unfiltered Log to a File"
+					  Content="Output Log to File" />
+
+		<Button x:Name="Exit"
+				Grid.Row="3"
+				Grid.Column="0"
+				Grid.ColumnSpan="4"
+				Click="Exit_Click"
+				Content="Exit" />
+	</Grid>
+</Window>

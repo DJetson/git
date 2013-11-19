@@ -1,0 +1,27 @@
+﻿Feature List
+============
+
+	* Add Debug Mode to LogWindow class and Log class *
+	---------------------------------------------------
+	Add a Debug Mode option that will be available if the host application is launched with the necessary startup arguments. Debug Mode facilitates
+	more verbose Logging, as well as the Log Window and Log Output.
+
+	* Add Support for Application Startup Arguments *
+	-------------------------------------------------
+	Implement the necessary functions to allow for startup arguments to determine whether or not Debug Mode Log Output will be generated.
+
+	* Generate Log Files *
+	----------------------
+	Generate Log Files on application crash, exit, or otherwise on command
+
+	* Rolling Crash Dumps *
+	-----------------------
+	Generate Crash Reports that automatically filter out all log entries which occurred outside the Crash Dump Buffer Length
+
+	* Add Event Reporting *
+	-----------------------
+	Add Entries to the system event log.
+
+	* Add Conditional Development Mode *
+	------------------------------------
+	Add Development mode Logging that is automatically filtered or compiled out of Release Builds

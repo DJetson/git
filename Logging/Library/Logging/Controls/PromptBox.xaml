@@ -1,0 +1,61 @@
+﻿<UserControl
+    x:Class="Logging.Controls.PromptBox"
+    x:Name="UC_PromptBox"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="300">
+    <Grid>
+        <TextBox
+            Text="{Binding Prompt,ElementName=UC_PromptBox}"
+            Foreground="LightGray" />
+        <TextBox TextChanged="TextBox_TextChanged"
+            Text="{Binding Text,ElementName=UC_PromptBox,UpdateSourceTrigger=PropertyChanged}">
+            <TextBox.Style>
+                <Style
+                    TargetType="{x:Type TextBox}">
+                    <Style.Setters>
+                        <Setter
+                            Property="Background"
+                            Value="White" />
+                    </Style.Setters>
+                    <Style.Triggers>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition
+                                    Property="IsFocused"
+                                    Value="False" />
+                                <Condition
+                                    Property="Text"
+                                    Value="{x:Null}" />
+                            </MultiTrigger.Conditions>
+                            <MultiTrigger.Setters>
+                                <Setter
+                                    Property="Background"
+                                    Value="Transparent" />
+                            </MultiTrigger.Setters>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition
+                                    Property="IsFocused"
+                                    Value="False" />
+                                <Condition
+                                    Property="Text"
+                                    Value="" />
+                            </MultiTrigger.Conditions>
+                            <MultiTrigger.Setters>
+                                <Setter
+                                    Property="Background"
+                                    Value="Transparent" />
+                            </MultiTrigger.Setters>
+                        </MultiTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
+    </Grid>
+</UserControl>
